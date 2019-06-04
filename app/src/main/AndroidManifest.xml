@@ -24,6 +24,10 @@
             </intent-filter>
         </activity>
         <activity
+            android:name=".ui.enterCity.EnterCityActivity"
+            android:label="EnterCity"
+            android:launchMode="singleTask" />
+        <activity
             android:name=".ui.dashboard.DashboardActivity"
             android:label="@string/title_dashboard_activity"
             android:launchMode="singleTask" />
