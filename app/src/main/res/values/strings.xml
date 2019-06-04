@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">BeerHub</string>
+    <string name="title_splash_activity">SplashActivity</string>
+    <string name="title_dashboard_activity">DashboardActivity</string>
+
+
+    <!--Generic-->
+    <string name="error_offline">You are offline</string>
+    <string name="error_timeout">Request has timed out</string>
+    <string name="error_unknown">Unknown error has occurred</string>
+
+</resources>

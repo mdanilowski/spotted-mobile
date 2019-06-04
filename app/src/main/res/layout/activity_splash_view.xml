@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+    </data>
+
+    <RelativeLayout android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@color/colorPrimary">
+        <ImageView android:layout_width="180dp"
+                   android:layout_height="180dp"
+                   android:layout_centerInParent="true"
+                   android:src="@color/colorAccent"
+                   android:foregroundGravity="center"
+                   android:layout_gravity="center"/>
+    </RelativeLayout>
+</layout>
+
