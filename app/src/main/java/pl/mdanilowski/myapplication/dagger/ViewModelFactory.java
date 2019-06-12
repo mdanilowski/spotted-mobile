@@ -1,14 +1,13 @@
 package pl.mdanilowski.myapplication.dagger;
 
-import java.util.Map;
+import androidx.annotation.NonNull;
+import androidx.lifecycle.ViewModel;
+import androidx.lifecycle.ViewModelProvider;
 
 import javax.inject.Inject;
 import javax.inject.Provider;
 import javax.inject.Singleton;
-
-import androidx.annotation.NonNull;
-import androidx.lifecycle.ViewModel;
-import androidx.lifecycle.ViewModelProvider;
+import java.util.Map;
 
 @Singleton
 public class ViewModelFactory implements ViewModelProvider.Factory {

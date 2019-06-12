@@ -10,13 +10,13 @@ abstract class UtilsModule {
 
     @Binds
     @Singleton
-    abstract fun bindBaseSchedulers(baseSchedulersImpl: BaseSchedulersImpl) : BaseSchedulers
+    abstract fun bindBaseSchedulers(baseSchedulersImpl: BaseSchedulersImpl): BaseSchedulers
 
     @Binds
     @Singleton
-    abstract fun bindStringsProvider(contextStringProvider: ContextStringProvider) : StringProvider
+    abstract fun bindStringsProvider(contextStringProvider: ContextStringProvider): StringProvider
 
     @Binds
     @Singleton
-    abstract fun bindErrorHandler(errorHandlerImpl: ErrorHandlerImpl) : ErrorHandler
+    abstract fun bindErrorHandler(errorHandlerImpl: ErrorHandlerImpl): ErrorHandler
 }

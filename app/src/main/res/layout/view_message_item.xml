@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="message"
+            type="pl.mdanilowski.myapplication.data.model.Message" />
+    </data>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="2dp"
+        app:cardCornerRadius="4dp"
+        app:cardBackgroundColor="@color/colorWhite">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:textSize="20sp"
+            android:padding="8dp"
+            android:textColor="@color/colorBlack"
+            android:gravity="center"
+            android:text="@{message.message}"
+            tools:text="Czy ktoś zna dobrego lekarza w Białymstoku?" />
+    </androidx.cardview.widget.CardView>
+</layout>

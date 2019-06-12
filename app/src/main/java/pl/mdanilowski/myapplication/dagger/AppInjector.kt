@@ -11,7 +11,7 @@ import com.byoutline.secretsauce.di.Injectable
 import dagger.android.AndroidInjection
 import dagger.android.support.AndroidSupportInjection
 import dagger.android.support.HasSupportFragmentInjector
-import pl.mdanilowski.myapplication.base.WishListApplication
+import pl.mdanilowski.myapplication.base.SpottedMobileApplication
 import pl.mdanilowski.myapplication.dagger.component.DaggerWishListApplicationComponent
 import pl.mdanilowski.myapplication.dagger.component.WishListApplicationComponent
 import pl.mdanilowski.myapplication.dagger.module.ApplicationModule
@@ -19,8 +19,8 @@ import pl.mdanilowski.myapplication.dagger.module.ApplicationModule
 object AppInjector {
 
     fun init(
-        app: WishListApplication,
-        graphCreator: (WishListApplication) -> WishListApplicationComponent = { buildGraph(it) }
+        app: SpottedMobileApplication,
+        graphCreator: (SpottedMobileApplication) -> WishListApplicationComponent = { buildGraph(it) }
     ): WishListApplicationComponent {
 
         val appComponent = graphCreator(app)
@@ -45,7 +45,7 @@ object AppInjector {
         return appComponent
     }
 
-    private fun buildGraph(app: WishListApplication): WishListApplicationComponent {
+    private fun buildGraph(app: SpottedMobileApplication): WishListApplicationComponent {
         val appComponent = DaggerWishListApplicationComponent.builder()
             .applicationModule(ApplicationModule(app))
             .build()

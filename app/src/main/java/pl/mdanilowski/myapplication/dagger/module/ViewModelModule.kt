@@ -16,7 +16,7 @@ abstract class ViewModelModule {
     @Binds
     @IntoMap
     @ViewModelKey(DashboardViewModel::class)
-    abstract fun bindDashboardViewModel(dashboardViewModel: DashboardViewModel) : ViewModel
+    abstract fun bindDashboardViewModel(dashboardViewModel: DashboardViewModel): ViewModel
 
     @Binds
     @IntoMap
@@ -24,5 +24,5 @@ abstract class ViewModelModule {
     abstract fun bindEnterCityViewModel(enterCityViewModel: EnterCityViewModel): ViewModel
 
     @Binds
-    abstract fun bindViewModelFactory(factory: ViewModelFactory) : ViewModelProvider.Factory
+    abstract fun bindViewModelFactory(factory: ViewModelFactory): ViewModelProvider.Factory
 }

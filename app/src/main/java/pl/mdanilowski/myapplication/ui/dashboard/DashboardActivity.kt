@@ -9,18 +9,22 @@ import pl.mdanilowski.myapplication.databinding.ActivityDashboardBinding
 
 class DashboardActivity : BaseActivity<ActivityDashboardBinding, DashboardViewModel>(), DashboardView {
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        setup(R.layout.activity_enter_city, DashboardViewModel::class.java)
-        binding.lifecycleOwner = this
+    companion object {
+        const val CITY_NAME = "city_name"
     }
 
-    override fun diplayMessages() {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setup(R.layout.activity_dashboard, DashboardViewModel::class.java)
+        binding.lifecycleOwner = this
+        binding.viewModel = viewModel
+        viewModel.city = intent.getStringExtra(CITY_NAME)
+        viewModel.getMessages()
     }
 }
 
-fun Activity.startDashboardActivity() =
+fun Activity.startDashboardActivity(city: String) =
     Intent(this, DashboardActivity::class.java)
         .setFlags(Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK)
+        .putExtra(DashboardActivity.CITY_NAME, city)
         .let(this::startActivity)

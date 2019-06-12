@@ -13,8 +13,8 @@ abstract class ActivityBindingModule {
     abstract fun bindEnterCityActivity(): EnterCityActivity
 
     @ContributesAndroidInjector
-    abstract fun bindDashboardActivity() : DashboardActivity
+    abstract fun bindDashboardActivity(): DashboardActivity
 
     @ContributesAndroidInjector
-    abstract fun bindSplashActivity() : SplashActivity
+    abstract fun bindSplashActivity(): SplashActivity
 }

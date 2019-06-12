@@ -1,4 +1,4 @@
-package pl.starter.android.data
+package pl.mdanilowski.myapplication.data.model
 
 import java.util.*
 

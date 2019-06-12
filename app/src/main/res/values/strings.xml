@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">BeerHub</string>
+    <string name="app_name">SpottedMobile</string>
     <string name="title_splash_activity">SplashActivity</string>
     <string name="title_dashboard_activity">DashboardActivity</string>
 
@@ -9,4 +9,9 @@
     <string name="error_timeout">Request has timed out</string>
     <string name="error_unknown">Unknown error has occurred</string>
 
+    <!--Screens-->
+    <string name="enter_city_text">ENTER CITY NAME TO SEE MESSAGES</string>
+    <string name="city_hint_text">City</string>
+    <string name="accept_city_button_text">ENTER</string>
+    <string name="no_city_name_error_text">You must provide city name</string>
 </resources>
