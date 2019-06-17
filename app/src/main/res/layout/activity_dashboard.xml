@@ -39,7 +39,10 @@
             android:layout_marginEnd="@dimen/large_margin"
             android:layout_marginRight="@dimen/large_margin"
             android:layout_marginBottom="@dimen/large_margin"
-            android:src="@color/colorWhite"
+            android:src="@android:drawable/ic_input_add"
+            android:tint="@color/colorWhite"
+            android:clickable="true"
+            android:focusable="true"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintRight_toRightOf="parent" />
 

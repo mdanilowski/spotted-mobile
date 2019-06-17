@@ -14,4 +14,7 @@
     <string name="city_hint_text">City</string>
     <string name="accept_city_button_text">ENTER</string>
     <string name="no_city_name_error_text">You must provide city name</string>
+    <string name="enter_message_hint">Enter message...</string>
+    <string name="submit_button_text">SUBMIT</string>
+    <string name="tags_hint">Tags... separated by space</string>
 </resources>

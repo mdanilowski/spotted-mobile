@@ -10,12 +10,16 @@ import pl.mdanilowski.myapplication.base.BaseViewModel
 import pl.mdanilowski.myapplication.data.ApiService
 import pl.mdanilowski.myapplication.data.model.Message
 import pl.mdanilowski.myapplication.util.BaseSchedulers
+import pl.mdanilowski.myapplication.util.StorageUtil
 import javax.inject.Inject
 
-interface DashboardView : BaseView
+interface DashboardView : BaseView {
+    fun setupCLickListeners()
+}
 
 class DashboardViewModel @Inject constructor(
-    private val schedulers: BaseSchedulers
+    private val schedulers: BaseSchedulers,
+    private val storageUtil: StorageUtil
 ) :
     BaseViewModel<DashboardView>() {
 
@@ -25,7 +29,16 @@ class DashboardViewModel @Inject constructor(
     lateinit var city: String
 
     var messages: ObservableList<Message> = ObservableArrayList<Message>()
-    var itemBinding: ItemBinding<Message> = ItemBinding.of(BR.message, R.layout.view_message_item)
+    var itemBinding: ItemBinding<Message>? = ItemBinding.of(BR.message, R.layout.view_message_item)
+
+    fun setupMessageClickListener(clickListener: OnMessageClick) {
+        itemBinding?.bindExtra(BR.listener, clickListener)
+    }
+
+    fun setCityAndSaveToPreferences(city: String) {
+        this.city = city
+        storageUtil.saveCityName(city)
+    }
 
     fun getMessages() {
         inProgress.set(true)
@@ -43,5 +56,9 @@ class DashboardViewModel @Inject constructor(
     private fun replaceMessages(newMessagesList: List<Message>) {
         messages.clear()
         messages.addAll(newMessagesList)
+    }
+
+    interface OnMessageClick {
+        fun onClick(message: Message)
     }
 }

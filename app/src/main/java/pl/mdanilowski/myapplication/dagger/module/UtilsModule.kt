@@ -19,4 +19,8 @@ abstract class UtilsModule {
     @Binds
     @Singleton
     abstract fun bindErrorHandler(errorHandlerImpl: ErrorHandlerImpl): ErrorHandler
+
+    @Binds
+    @Singleton
+    abstract fun bindStorageUtil(simpleStorage: SpottedSimpleStorage): StorageUtil
 }

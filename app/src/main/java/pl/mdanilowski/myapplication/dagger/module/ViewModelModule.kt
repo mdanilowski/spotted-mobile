@@ -7,7 +7,9 @@ import dagger.Module
 import dagger.multibindings.IntoMap
 import pl.mdanilowski.myapplication.dagger.ViewModelFactory
 import pl.mdanilowski.myapplication.dagger.util.ViewModelKey
+import pl.mdanilowski.myapplication.ui.add.AddMessageViewModel
 import pl.mdanilowski.myapplication.ui.dashboard.DashboardViewModel
+import pl.mdanilowski.myapplication.ui.details.MessageDetailsViewModel
 import pl.mdanilowski.myapplication.ui.enterCity.EnterCityViewModel
 
 @Module
@@ -22,6 +24,16 @@ abstract class ViewModelModule {
     @IntoMap
     @ViewModelKey(EnterCityViewModel::class)
     abstract fun bindEnterCityViewModel(enterCityViewModel: EnterCityViewModel): ViewModel
+
+    @Binds
+    @IntoMap
+    @ViewModelKey(MessageDetailsViewModel::class)
+    abstract fun bindMessageDetailsViewModel(messageDetailsViewModel: MessageDetailsViewModel): ViewModel
+
+    @Binds
+    @IntoMap
+    @ViewModelKey(AddMessageViewModel::class)
+    abstract fun bindAddMessageViewModel(addMessageViewModel: AddMessageViewModel): ViewModel
 
     @Binds
     abstract fun bindViewModelFactory(factory: ViewModelFactory): ViewModelProvider.Factory

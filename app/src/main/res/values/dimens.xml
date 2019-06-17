@@ -11,7 +11,7 @@
 
     <!--SCREENS-->
 
-    <!--Enter city-->
+    <!--Enter message-->
     <dimen name="edit_text_width_city">300dp</dimen>
     <dimen name="edit_text_height_city">64dp</dimen>
     <dimen name="button_height_enter_city">64dp</dimen>
