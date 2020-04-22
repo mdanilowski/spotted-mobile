@@ -4,7 +4,7 @@ import dagger.Component
 import dagger.android.AndroidInjector
 import dagger.android.support.AndroidSupportInjectionModule
 import dagger.android.support.DaggerApplication
-import pl.mdanilowski.myapplication.base.WishListApplication
+import pl.mdanilowski.myapplication.base.SpottedMobileApplication
 import pl.mdanilowski.myapplication.dagger.module.ActivityBindingModule
 import pl.mdanilowski.myapplication.dagger.module.ApplicationModule
 import pl.mdanilowski.myapplication.dagger.module.UtilsModule
@@ -22,5 +22,5 @@ import javax.inject.Singleton
 )
 interface WishListApplicationComponent : AndroidInjector<DaggerApplication> {
 
-    fun inject(application: WishListApplication)
+    fun inject(application: SpottedMobileApplication)
 }

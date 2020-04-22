@@ -1,5 +1,6 @@
-package pl.starter.android.data
+package pl.mdanilowski.myapplication.data.model
 
+import java.io.Serializable
 import java.util.*
 
-data class Comment(var comment: String, var date: Date)
+data class Comment(var comment: String, var date: Date) : Serializable
