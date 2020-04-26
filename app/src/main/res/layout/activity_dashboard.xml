@@ -4,13 +4,13 @@
 
     <data>
 
-        <import type="pl.mdanilowski.myapplication.R" />
+        <import type="pl.mdanilowski.spotted.R" />
 
         <import type="android.view.View" />
 
         <variable
             name="viewModel"
-            type="pl.mdanilowski.myapplication.ui.dashboard.DashboardViewModel" />
+            type="pl.mdanilowski.spotted.ui.dashboard.DashboardViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -26,8 +26,6 @@
             android:id="@+id/rvMessages"
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            app:itemBinding="@{viewModel.itemBinding}"
-            app:items="@{viewModel.messages}"
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintTop_toBottomOf="@id/toolbar" />

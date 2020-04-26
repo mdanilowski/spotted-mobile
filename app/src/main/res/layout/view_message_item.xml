@@ -7,11 +7,11 @@
 
         <variable
             name="message"
-            type="pl.mdanilowski.myapplication.data.model.Message" />
+            type="pl.mdanilowski.spotted.data.model.Message" />
 
         <variable
             name="listener"
-            type="pl.mdanilowski.myapplication.ui.dashboard.DashboardViewModel.OnMessageClick" />
+            type="pl.mdanilowski.spotted.ui.dashboard.DashboardViewModel.OnMessageClick" />
     </data>
 
     <androidx.cardview.widget.CardView
@@ -19,7 +19,6 @@
         android:layout_height="wrap_content"
         android:layout_margin="2dp"
         app:cardCornerRadius="4dp"
-        app:onClick="@{() -> listener.onClick(message)}"
         app:cardBackgroundColor="@color/colorWhite">
 
         <TextView

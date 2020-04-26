@@ -7,7 +7,7 @@
 
         <variable
             name="viewModel"
-            type="pl.mdanilowski.myapplication.ui.details.MessageDetailsViewModel" />
+            type="pl.mdanilowski.spotted.ui.details.MessageDetailsViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
