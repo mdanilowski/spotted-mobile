@@ -10,20 +10,23 @@ import pl.mdanilowski.spotted.util.ErrorHandler
 class EnterCityViewModel constructor(
     private val citiesRepository: CitiesRepository,
     private val baseSchedulers: BaseSchedulers,
-    errorHandler: ErrorHandler
-) : BaseViewModel(errorHandler) {
+    private val errorHandler: ErrorHandler
+) : BaseViewModel() {
 
-    private val cities: MutableLiveData<List<City>> by lazy { MutableLiveData<List<City>>() }
+    val cities: MutableLiveData<List<City>> by lazy { MutableLiveData<List<City>>() }
+    val errorMessage: MutableLiveData<String> by lazy { MutableLiveData<String>() }
 
     fun getAvailableCities() {
+        inProgress.set(true)
         disposable.add(
             citiesRepository.getAllCities()
                 .subscribeOn(baseSchedulers.io())
+                .doOnComplete { inProgress.set(false) }
                 .observeOn(baseSchedulers.main())
                 .subscribe({
                     cities.value = it
                 }, {
-                    defaultErrorConsumer.accept(it)
+                    errorHandler.handleError(it) { e -> errorMessage.value = e}
                 })
         )
     }

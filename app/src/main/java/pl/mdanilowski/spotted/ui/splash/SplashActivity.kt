@@ -11,7 +11,7 @@ import java.util.concurrent.TimeUnit
 
 class SplashActivity : AppCompatActivity() {
 
-    val compositeDisposable: CompositeDisposable = CompositeDisposable()
+    private val compositeDisposable: CompositeDisposable = CompositeDisposable()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -20,9 +20,10 @@ class SplashActivity : AppCompatActivity() {
 
     override fun onResume() {
         super.onResume()
-        compositeDisposable.add(Completable.complete()
-            .delay(2, TimeUnit.SECONDS)
-            .subscribe({ startEnterCityActivity(this) }, { t: Throwable -> Timber.e(t) })
+        compositeDisposable.add(
+            Completable.complete()
+                .delay(2, TimeUnit.SECONDS)
+                .subscribe({ startEnterCityActivity(this) }, { t: Throwable -> Timber.e(t) })
         )
     }
 

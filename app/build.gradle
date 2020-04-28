@@ -64,12 +64,12 @@ android {
         prod {
             dimension "api"
             // TODO change to prod when it will be available
-            buildConfigField "String", "$apiUrlKey", "\"http://192.168.0.100:8080/\""
+            buildConfigField "String", "$apiUrlKey", "\"http://192.168.0.101:8080/\""
         }
         dev {
             dimension "api"
             applicationIdSuffix ".dev"
-            buildConfigField "String", "$apiUrlKey", "\"http://192.168.0.100:8080/\""
+            buildConfigField "String", "$apiUrlKey", "\"http://192.168.0.101:8080/\""
         }
     }
 
