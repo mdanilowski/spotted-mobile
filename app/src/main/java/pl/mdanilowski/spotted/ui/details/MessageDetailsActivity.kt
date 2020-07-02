@@ -20,7 +20,6 @@ class MessageDetailsActivity :
         super.onCreate(savedInstanceState)
         setup(R.layout.activity_message_details, MessageDetailsViewModel::class.java)
         binding.viewModel = viewModel
-//        vm.message = intent.getSerializableExtra(MESSAGE_TAG) as Message
         setupToolbar()
     }
 

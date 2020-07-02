@@ -15,14 +15,9 @@ class AddMessageActivity :
         super.onCreate(savedInstanceState)
         setup(R.layout.activity_add_message, AddMessageViewModel::class.java)
         binding.lifecycleOwner = this
-//        binding.viewModel = vm
-//        setupClickListeners()
-//        setupToolbar()
+        binding.viewModel = viewModel
+        setupToolbar()
     }
-
-//    override fun setupClickListeners() {
-//        btnSubmit.setOnClickListener { vm.addMessage() }
-//    }
 
     private fun setupToolbar() {
         setSupportActionBar(binding.toolbar.findViewById(R.id.toolbar))
