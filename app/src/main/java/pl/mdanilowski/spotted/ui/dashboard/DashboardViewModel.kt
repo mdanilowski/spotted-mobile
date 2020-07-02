@@ -9,22 +9,17 @@ import pl.mdanilowski.spotted.util.BaseSchedulers
 import pl.mdanilowski.spotted.util.ErrorHandler
 import pl.mdanilowski.spotted.util.StorageUtil
 
+// TODO : CONVERT TO INTERACTOR USAGE
 class DashboardViewModel constructor(
     private val apiService: ApiService,
     private val schedulers: BaseSchedulers,
     private val storageUtil: StorageUtil,
-    errorHandler: ErrorHandler
-) : BaseViewModel(errorHandler) {
-
+    private val errorHandler: ErrorHandler
+) : BaseViewModel() {
 
     lateinit var city: String
 
-    var messages: ObservableList<Message> = ObservableArrayList<Message>()
-//    var itemBinding: ItemBinding<Message>? = ItemBinding.of(BR.message, R.layout.view_message_item)
-//
-//    fun setupMessageClickListener(clickListener: OnMessageClick) {
-//        itemBinding?.bindExtra(BR.listener, clickListener)
-//    }
+    private var messages: ObservableList<Message> = ObservableArrayList<Message>()
 
     fun setCityAndSaveToPreferences(city: String) {
         this.city = city
@@ -40,7 +35,7 @@ class DashboardViewModel constructor(
                 .observeOn(schedulers.main())
                 .subscribe(
                     { replaceMessages(it) },
-                    { defaultErrorAction(it) })
+                    { errorHandler.handleError(it) })
         )
     }
 

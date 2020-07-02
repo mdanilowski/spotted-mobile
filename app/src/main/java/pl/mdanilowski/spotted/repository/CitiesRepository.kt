@@ -1,7 +1,6 @@
 package pl.mdanilowski.spotted.repository
 
 import io.reactivex.Observable
-import io.reactivex.Single
 import pl.mdanilowski.spotted.data.interactors.DatabaseInteractor
 import pl.mdanilowski.spotted.data.interactors.NetworkInteractor
 import pl.mdanilowski.spotted.data.model.City

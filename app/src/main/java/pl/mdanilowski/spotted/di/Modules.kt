@@ -31,7 +31,7 @@ import java.util.concurrent.TimeUnit
 val viewModelModule = module(override = true) {
     viewModel { EnterCityViewModel(get(), get(), get()) }
     viewModel { DashboardViewModel(get(), get(), get(), get()) }
-    viewModel { AddMessageViewModel(get(), get(), get(), get()) }
+    viewModel { AddMessageViewModel(get(), get(), get()) }
     viewModel { MessageDetailsViewModel(get()) }
 }
 

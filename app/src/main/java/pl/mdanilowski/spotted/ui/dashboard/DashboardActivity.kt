@@ -19,23 +19,7 @@ class DashboardActivity :
         setup(R.layout.activity_dashboard, DashboardViewModel::class.java)
         binding.lifecycleOwner = this
         binding.viewModel = viewModel
-//        vm.setCityAndSaveToPreferences(intent.getStringExtra(CITY_NAME))
-//        vm.setupMessageClickListener(object : DashboardViewModel.OnMessageClick {
-//            override fun onClick(message: Message) = startMessageDetailsActivity(this@DashboardActivity, message)
-//        })
-//        vm.getMessages()
-//        setupCLickListeners()
-//        setupToolbar()
     }
-
-//    fun setupCLickListeners() {
-//        binding.fabAddMessage.setOnClickListener { startAddMessageActivity(this) }
-//    }
-//
-//    private fun setupToolbar() {
-//        setSupportActionBar(binding.toolbar.findViewById(R.id.toolbar))
-//        supportActionBar?.title = "Spotted " + storageUtil.getCityName()
-//    }
 }
 
 fun Activity.startDashboardActivity(city: String) =
