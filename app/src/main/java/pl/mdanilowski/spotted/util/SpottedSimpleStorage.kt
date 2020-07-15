@@ -6,9 +6,9 @@ import pl.mdanilowski.spotted.base.SpottedMobileApplication
 
 interface StorageUtil {
 
-    fun getCityName(): String?
+    fun getCityId(): Long?
 
-    fun saveCityName(city: String)
+    fun saveCityId(city: Long)
 }
 
 class SpottedSimpleStorage constructor(appContext: Context) : StorageUtil {
@@ -18,12 +18,12 @@ class SpottedSimpleStorage constructor(appContext: Context) : StorageUtil {
 
     private val _city = "message"
 
-    override fun getCityName(): String? {
-        return sharedPreferences.getString(this._city, null)
+    override fun getCityId(): Long? {
+        return sharedPreferences.getLong(this._city, 0)
     }
 
-    override fun saveCityName(city: String) {
-        editor.putString(_city, city)
+    override fun saveCityId(cityId: Long) {
+        editor.putLong(_city, cityId)
         editor.commit()
     }
 }

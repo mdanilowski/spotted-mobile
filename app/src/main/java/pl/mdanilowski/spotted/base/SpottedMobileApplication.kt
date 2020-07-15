@@ -27,9 +27,11 @@ class SpottedMobileApplication : Application() {
             androidContext(this@SpottedMobileApplication)
             modules(
                 listOf(
+                    dbModule,
+                    useCaseModule,
                     viewModelModule,
                     repositoryModule,
-                    useCaseModule,
+                    utilModule,
                     networkModule
                 )
             )

@@ -17,22 +17,22 @@
         tools:ignore="GoogleAppIndexingWarning"
         android:usesCleartextTraffic="true"
         tools:targetApi="m">
-        <activity android:name="pl.mdanilowski.spotted.ui.splash.SplashActivity">
+        <activity android:name="pl.mdanilowski.spotted.application.splash.presentation.SplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
         <activity
-            android:name="pl.mdanilowski.spotted.ui.enterCity.EnterCityActivity"
+            android:name="pl.mdanilowski.spotted.application.cities.presentation.citySelect.CitySelectActivity"
             android:label="EnterCity"
             android:launchMode="singleTask" />
         <activity
-            android:name="pl.mdanilowski.spotted.ui.dashboard.DashboardActivity"
+            android:name="pl.mdanilowski.spotted.application.posts.presentation.postsDashboard.PostsDashboardActivity"
             android:label="@string/title_dashboard_activity"
             android:launchMode="singleTask" />
-        <activity android:name="pl.mdanilowski.spotted.ui.details.MessageDetailsActivity" />
-        <activity android:name="pl.mdanilowski.spotted.ui.add.AddMessageActivity" />
+        <activity android:name="pl.mdanilowski.spotted.application.posts.presentation.post.PostActivity" />
+        <activity android:name="pl.mdanilowski.spotted.application.posts.presentation.addPost.AddPostActivity" />
     </application>
 </manifest>
 

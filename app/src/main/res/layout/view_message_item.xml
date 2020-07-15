@@ -7,11 +7,11 @@
 
         <variable
             name="message"
-            type="pl.mdanilowski.spotted.data.model.Message" />
+            type="pl.mdanilowski.spotted.application.posts.domain.model.Post" />
 
         <variable
             name="listener"
-            type="pl.mdanilowski.spotted.ui.dashboard.DashboardViewModel.OnMessageClick" />
+            type="pl.mdanilowski.spotted.application.posts.presentation.postsDashboard.PostsDashboardViewModel" />
     </data>
 
     <androidx.cardview.widget.CardView
