@@ -16,7 +16,7 @@ interface CityDao {
     fun getCityName(cityId: Long) : Single<String>
 
     @Query("SELECT c.name FROM CITY c WHERE c.id == :cityId")
-    fun getCityNameLiveData(cityId: Long) : LiveData<String>
+    fun observeCityName(cityId: Long) : LiveData<String>
 
     @Query("DELETE FROM CITY")
     fun deleteAllCities() : Completable

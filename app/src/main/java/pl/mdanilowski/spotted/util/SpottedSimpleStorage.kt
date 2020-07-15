@@ -2,7 +2,6 @@ package pl.mdanilowski.spotted.util
 
 import android.content.Context
 import android.content.SharedPreferences
-import pl.mdanilowski.spotted.base.SpottedMobileApplication
 
 interface StorageUtil {
 
@@ -22,8 +21,8 @@ class SpottedSimpleStorage constructor(appContext: Context) : StorageUtil {
         return sharedPreferences.getLong(this._city, 0)
     }
 
-    override fun saveCityId(cityId: Long) {
-        editor.putLong(_city, cityId)
+    override fun saveCityId(city: Long) {
+        editor.putLong(_city, city)
         editor.commit()
     }
 }

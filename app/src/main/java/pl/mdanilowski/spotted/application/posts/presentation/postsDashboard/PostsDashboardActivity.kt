@@ -20,11 +20,11 @@ class PostsDashboardActivity :
         binding.viewModel = viewModel
 
         viewModel.setSelectedCityAndFetchPosts(intent.getLongExtra(CITY_ID, CITY_ID_DEFAULT_VALUE))
+        viewModel.posts.observe(this, Observer { posts -> Timber.d("POSTS $posts") })
     }
 
     override fun onStart() {
         super.onStart()
-        viewModel.posts.observe(this, Observer { posts -> Timber.d("POSTS $posts") })
         viewModel.fetchNewPostsForCity()
     }
 

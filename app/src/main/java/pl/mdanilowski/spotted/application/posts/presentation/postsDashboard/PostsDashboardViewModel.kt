@@ -25,7 +25,7 @@ class PostsDashboardViewModel(
     fun setSelectedCityAndFetchPosts(cityId: Long) {
         this.cityId = cityId
         cityName = citiesUseCase.getSelectedCityName(cityId)
-        cityLocalStorageUseCase.updateSelectedCity(cityId)
+        cityLocalStorageUseCase.updateSelectedCityId(cityId)
         posts = postsUseCase.getPostsForCity(cityId)
     }
 

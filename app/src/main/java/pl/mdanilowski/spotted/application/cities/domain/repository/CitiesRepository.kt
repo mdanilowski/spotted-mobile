@@ -5,13 +5,14 @@ import io.reactivex.Completable
 import pl.mdanilowski.spotted.application.cities.data.dao.CityDao
 import pl.mdanilowski.spotted.application.cities.data.entity.CityEntity
 import pl.mdanilowski.spotted.application.cities.domain.model.City
+import pl.mdanilowski.spotted.extensions.models.toEntity
 import pl.mdanilowski.spotted.network.ApiService
-import pl.mdanilowski.spotted.util.BaseSchedulers
 import pl.mdanilowski.spotted.util.StorageUtil
+import timber.log.Timber
 
 interface CitiesRepository {
 
-    fun saveSelectedCityId(cityId: Long)
+    fun saveSelectedCityId(cityId: Long): Completable
 
     fun getSelectedCityId(): Long?
 
@@ -29,25 +30,24 @@ class CitiesRepositoryImpl(
 ) :
     CitiesRepository {
 
-    override fun saveSelectedCityId(cityId: Long) = storageUtil.saveCityId(cityId)
+    override fun saveSelectedCityId(cityId: Long): Completable =
+        Completable.create { storageUtil.saveCityId(cityId) }
 
     override fun getSelectedCityId(): Long? = storageUtil.getCityId()
 
     override fun getSelectedCityName(cityId: Long): LiveData<String> =
-        cityDao.getCityNameLiveData(cityId)
+        cityDao.observeCityName(cityId)
 
     /* Get cities use case */
     override fun getAllCities(): LiveData<List<CityEntity>> = cityDao.getAllCities()
 
     /* Get cities use case */
     override fun fetchAndPersistCities(): Completable = apiService.getAllAvailableCities()
-        .doOnSuccess { cityDao.deleteAllCities() }
-        .flatMapCompletable { cities -> cityDao.insertCities(mapToCityEntities(cities)) }
-
-    private fun mapToCityEntities(cities: List<City>): List<CityEntity> = cities.map { city ->
-        CityEntity(
-            city.name,
-            city.image
-        )
-    }.toList()
+        .flatMapCompletable { cities ->
+            return@flatMapCompletable cityDao.deleteAllCities()
+                .doOnComplete { Timber.i("DELETE COMPLETED") }
+                .andThen(
+                    cityDao.insertCities(cities.map { it.toEntity() })
+                )
+        }
 }
