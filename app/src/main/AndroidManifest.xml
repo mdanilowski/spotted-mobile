@@ -1,32 +1,38 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="pl.mdanilowski.myapplication">
+    package="pl.mdanilowski.spotted">
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 
     <application
-        android:name=".base.WishListApplication"
+        android:name="pl.mdanilowski.spotted.base.SpottedMobileApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
-        tools:ignore="GoogleAppIndexingWarning">
-        <activity
-            android:name=".ui.splash.SplashActivity"
-            android:label="@string/title_splash_activity">
+        tools:ignore="GoogleAppIndexingWarning"
+        android:usesCleartextTraffic="true"
+        tools:targetApi="m">
+        <activity android:name="pl.mdanilowski.spotted.application.splash.presentation.SplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
         <activity
-            android:name=".ui.dashboard.DashboardActivity"
+            android:name="pl.mdanilowski.spotted.application.cities.presentation.citySelect.CitySelectActivity"
+            android:label="EnterCity"
+            android:launchMode="singleTask" />
+        <activity
+            android:name="pl.mdanilowski.spotted.application.posts.presentation.postsDashboard.PostsDashboardActivity"
             android:label="@string/title_dashboard_activity"
             android:launchMode="singleTask" />
+        <activity android:name="pl.mdanilowski.spotted.application.posts.presentation.post.PostActivity" />
+        <activity android:name="pl.mdanilowski.spotted.application.posts.presentation.addPost.AddPostActivity" />
     </application>
 </manifest>
 

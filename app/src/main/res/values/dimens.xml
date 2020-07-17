@@ -1,4 +1,19 @@
 <resources>
+    <!--GENERIC-->
     <dimen name="fab_margin">16dp</dimen>
-    <dimen name="height_login_button">50dp</dimen>
+    <dimen name="large_margin">32dp</dimen>
+    <dimen name="medium_margin">16dp</dimen>
+    <dimen name="progress_bar_size">64dp</dimen>
+
+    <!--Text-->
+    <dimen name="large_button_text">26sp</dimen>
+
+
+    <!--SCREENS-->
+
+    <!--Enter message-->
+    <dimen name="edit_text_width_city">300dp</dimen>
+    <dimen name="edit_text_height_city">64dp</dimen>
+    <dimen name="button_height_enter_city">64dp</dimen>
+    <dimen name="button_width_enter_city">256dp</dimen>
 </resources>
