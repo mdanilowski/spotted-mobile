@@ -10,6 +10,7 @@
     <string name="error_unknown">Unknown error has occurred</string>
 
     <!--Screens-->
+    <string name="select_city">Select your city</string>
     <string name="enter_city_text">ENTER CITY NAME TO SEE MESSAGES</string>
     <string name="city_hint_text">City</string>
     <string name="accept_city_button_text">ENTER</string>
